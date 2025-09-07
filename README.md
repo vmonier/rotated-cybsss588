@@ -12,9 +12,9 @@ PyTorch implementation of rotated object detection models with oriented bounding
 ## Quick Start
 
 ```python
-from rotated.architecture import create_ppyoloe_r_model
+from rotated.architecture import create_ppyoloer_model
 
-model = create_ppyoloe_r_model(num_classes=15)
+model = create_ppyoloer_model(num_classes=15)
 images = torch.randn(2, 3, 640, 640)
 
 # Training

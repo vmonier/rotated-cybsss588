@@ -2,7 +2,7 @@ import torch
 import torch.nn.functional as F
 
 
-def decode_ppyoloe_r_boxes(
+def decode_ppyoloer_boxes(
     anchor_points: torch.Tensor,
     reg_dist: torch.Tensor,
     raw_angles: torch.Tensor,

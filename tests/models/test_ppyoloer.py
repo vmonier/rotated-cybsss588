@@ -3,7 +3,7 @@ import math
 import torch
 
 from rotated.backbones import CSPResNet
-from rotated.models.ppyoloer import PPYOLOER, create_ppyoloe_r_model
+from rotated.models.ppyoloer import PPYOLOER, create_ppyoloer_model
 from rotated.nn.custom_pan import CustomCSPPAN
 from rotated.nn.ppyoloer_head import PPYOLOERHead
 
@@ -24,7 +24,7 @@ def test_ppyoloer_init():
 
 def test_ppyoloer_forward_inference():
     """Test PPYOLOER forward pass in inference mode."""
-    model = create_ppyoloe_r_model(num_classes=15)
+    model = create_ppyoloer_model(num_classes=15)
     model.eval()
 
     batch_size = 2
@@ -48,7 +48,7 @@ def test_ppyoloer_forward_inference():
 
 def test_ppyoloer_forward_training():
     """Test PPYOLOER forward pass in training mode."""
-    model = create_ppyoloe_r_model(num_classes=15)
+    model = create_ppyoloer_model(num_classes=15)
     model.train()
 
     batch_size = 2
@@ -96,17 +96,17 @@ def test_ppyoloer_forward_training():
     assert has_gradients, "No gradients found after backward pass"
 
 
-def test_create_ppyoloe_r_model():
-    """Test create_ppyoloe_r_model factory function."""
+def test_create_ppyoloer_model():
+    """Test create_ppyoloer_model factory function."""
     # Test default configuration
-    model = create_ppyoloe_r_model()
+    model = create_ppyoloer_model()
     assert isinstance(model, PPYOLOER)
     assert hasattr(model, "backbone")
     assert hasattr(model, "neck")
     assert hasattr(model, "head")
 
     # Test custom num_classes
-    model_custom = create_ppyoloe_r_model(num_classes=20)
+    model_custom = create_ppyoloer_model(num_classes=20)
     assert model_custom.head.num_classes == 20
 
     # Test model components are properly configured
@@ -117,7 +117,7 @@ def test_create_ppyoloe_r_model():
 
 def test_ppyoloer_output_shapes():
     """Test PPYOLOER output shapes are correct."""
-    model = create_ppyoloe_r_model(num_classes=10)
+    model = create_ppyoloer_model(num_classes=10)
 
     batch_size = 1
     img_size = 416  # Different size to test flexibility

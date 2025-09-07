@@ -50,7 +50,7 @@ class PPYOLOER(nn.Module):
         return self.head(features, targets)
 
 
-def create_ppyoloe_r_model(num_classes: int = 15) -> PPYOLOER:
+def create_ppyoloer_model(num_classes: int = 15) -> PPYOLOER:
     """Factory function to create a PP-YOLOE-R model with default configuration.
 
     Args:

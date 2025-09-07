@@ -3,7 +3,7 @@ import torch
 from rotated.nn.ppyoloer_head import PPYOLOERHead
 
 
-def test_ppyoloe_r_head_forward_inference():
+def test_ppyoloer_head_forward_inference():
     """Test PPYOLOERHead forward pass in inference mode."""
     in_channels = (192, 384, 768)
     num_classes = 15

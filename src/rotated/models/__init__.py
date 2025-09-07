@@ -1,3 +1,3 @@
-from rotated.models.ppyoloer import PPYOLOER, create_ppyoloe_r_model
+from rotated.models.ppyoloer import PPYOLOER, create_ppyoloer_model
 
-__all__ = ["create_ppyoloe_r_model", "PPYOLOER"]
+__all__ = ["create_ppyoloer_model", "PPYOLOER"]

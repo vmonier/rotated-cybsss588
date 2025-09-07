@@ -8,7 +8,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from rotated.boxes.decode import decode_ppyoloe_r_boxes
+from rotated.boxes.decode import decode_ppyoloer_boxes
 from rotated.nn.common import ConvBNLayer
 
 
@@ -257,7 +257,7 @@ class PPYOLOERHead(nn.Module):
         anchor_points, stride_tensor, _ = self._generate_anchors(feats)
 
         cls_scores = torch.sigmoid(cls_logits)
-        decoded_boxes = decode_ppyoloe_r_boxes(anchor_points, reg_dist, raw_angles, stride_tensor, self.angle_proj)
+        decoded_boxes = decode_ppyoloer_boxes(anchor_points, reg_dist, raw_angles, stride_tensor, self.angle_proj)
 
         # Compute losses if targets provided
         losses = None
