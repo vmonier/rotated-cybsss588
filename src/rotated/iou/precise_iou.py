@@ -235,7 +235,7 @@ class PreciseRotatedIoU:
         # 2D cross product: edge_vector × vertex_vector
         cross_product = edge_vector[0] * vertex_vector[1] - edge_vector[1] * vertex_vector[0]
 
-        return cross_product >= -self.eps  # Allow small numerical errors
+        return bool((cross_product >= -self.eps).item())
 
     def _compute_line_intersection(self, p1: torch.Tensor, p2: torch.Tensor, p3: torch.Tensor, p4: torch.Tensor):
         """Compute intersection point of two line segments.
