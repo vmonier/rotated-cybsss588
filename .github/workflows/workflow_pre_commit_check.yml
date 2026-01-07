@@ -12,7 +12,7 @@ jobs:
       - name: 🛂 Query modified files
         id: filter
         # Action to get changed files
-        uses: dorny/paths-filter@v2
+        uses: dorny/paths-filter@668c092af3649c4b664c54e4b704aa46782f6f7c
         with:
           # To get the list of files as parameters in a command (space separation)
           list-files: "shell"
